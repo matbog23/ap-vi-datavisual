@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="main.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="button.css" />
+
     <title>VI - Data Visualisation</title>
   </head>
   <body>
@@ -19,15 +20,50 @@
         </footer>
       </div>
       <div class="div3">
-        <p>
-          Out of the box, three.js includes the fundamentals of a 3D engine.
-          Other three.js components — such as controls, loaders, and
-          post-processing effects — are part of the addons/ directory. Addons do
-          not need to be installed separately, but do need to be imported
-          separately.
-        </p>
+        <table>
+          <tr>
+            <th>Kleur</th>
+            <th>Methode</th>
+          </tr>
+          <tr>
+            <td><div style="color: pink">&#9608;</div></td>
+            <td>SMS</td>
+          </tr>
+          <tr>
+            <td><div style="color: yellow">&#9608;</div></td>
+            <td>Snapchat</td>
+          </tr>
+          <tr>
+            <td><div style="color: green">&#9608;</div></td>
+            <td>Whatsapp</td>
+          </tr>
+          <tr>
+            <td><div style="color: red">&#9608;</div></td>
+            <td>Discord DM</td>
+          </tr>
+          <tr>
+            <td><div style="color: blue">&#9608;</div></td>
+            <td>Discord Call</td>
+          </tr>
+          <tr>
+            <td><div style="color: purple">&#9608;</div></td>
+            <td>Bellen</td>
+          </tr>
+          <tr>
+            <td><div style="color: #ffa600">&#9608;</div></td>
+            <td>Gesprek</td>
+          </tr>
+        </table>
       </div>
-      <div class="div4"></div>
+      <div class="div4">
+        <button onclick="reloadPage()" class="button-55">Reset</button>
+
+        <script>
+          function reloadPage() {
+            location.reload();
+          }
+        </script>
+      </div>
     </div>
   </body>
 </html>

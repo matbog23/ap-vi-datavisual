@@ -50,7 +50,7 @@ const sphere9 = new THREE.Mesh(sphereGeometryXL, sphereMaterialGr);
 const sphere10 = new THREE.Mesh(sphereGeometryM, sphereMaterialGr);
 const sphere11 = new THREE.Mesh(sphereGeometryL, sphereMaterialGr);
 //Red
-const sphere12 = new THREE.Mesh(sphereGeometryS, sphereMaterialRe);
+const sphere12 = new THREE.Mesh(sphereGeometryM, sphereMaterialRe);
 //Yellow
 const sphere13 = new THREE.Mesh(sphereGeometryXL, sphereMaterialYe);
 const sphere14 = new THREE.Mesh(sphereGeometryL, sphereMaterialYe);
@@ -125,7 +125,7 @@ topLight.position.set(500, 500, 500);
 topLight.castShadow = true;
 scene.add(topLight);
 
-const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+const ambientLight = new THREE.AmbientLight(0xff0fff); // soft white light
 scene.add(ambientLight);
 
 //Add Controls
