@@ -1,8 +1,12 @@
 body {
   overflow: hidden;
-  margin: 0;
   font-family: "Grandstander", cursive;
-  background-image: url("./assets/white-paper-texture.jpg");
+  background-image: url("./assets/BackgroundV2.jpg");
+  margin: 0;
+  padding: 0;
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
 }
 
 .parent {
@@ -21,23 +25,35 @@ body {
   grid-area: 10 / 2 / 11 / 11;
 }
 .div3 {
-  grid-area: 1 / 1 / 10 / 2;
+  grid-area: 5 / 1 / 7 / 2;
 }
 .div4 {
   grid-area: 10 / 1 / 11 / 2;
 }
 
 .div3 {
-  height: 30vw;
+  height: 20vh;
+  background-image: url("./assets/LegendeTransparant.png");
+  margin: 0;
+  padding: 3rem;
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
 }
 
 #sliderContainer {
-  width: 80%;
+  width: 10%;
   margin: 20px auto;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #slider {
   width: 100%;
+  height: 80%;
+  transform: rotate(-90deg);
 }
 
 table {
