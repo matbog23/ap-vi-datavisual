@@ -50,38 +50,62 @@ const sphereGeometryM = new THREE.SphereGeometry(1, 32, 32);
 const sphereGeometryS = new THREE.SphereGeometry(0.5, 32, 32);
 
 // Define sphere materials with different colors
-const sphereMaterial1 = new THREE.MeshStandardMaterial({ color: 0xff0000 }); // Red
-const sphereMaterial2 = new THREE.MeshStandardMaterial({ color: 0xf235df }); // Pink
-const sphereMaterial3 = new THREE.MeshStandardMaterial({ color: 0x4bfc30 }); // Green
+const sphereMaterialRe = new THREE.MeshStandardMaterial({ color: 0xc90e0e }); // Red
+const sphereMaterialPi = new THREE.MeshStandardMaterial({ color: 0xfb24ff }); // Pink
+const sphereMaterialGr = new THREE.MeshStandardMaterial({ color: 0x4bfc30 }); // Green
+const sphereMaterialPu = new THREE.MeshStandardMaterial({ color: 0x7f15bd }); // Purple
+const sphereMaterialYe = new THREE.MeshStandardMaterial({ color: 0xffca3a }); // Yellow
+const sphereMaterialBl = new THREE.MeshStandardMaterial({ color: 0x1982c4 }); // Blue
+const sphereMaterialOr = new THREE.MeshStandardMaterial({ color: 0xfa772a }); // Orange
 
 // Create sphere meshes with geometries and materials
 //orange
-const sphere1 = new THREE.Mesh(sphereGeometryXL, sphereMaterial1);
-const sphere2 = new THREE.Mesh(sphereGeometryM, sphereMaterial1);
-const sphere3 = new THREE.Mesh(sphereGeometryL, sphereMaterial1);
-const sphere4 = new THREE.Mesh(sphereGeometryM, sphereMaterial1);
-const sphere5 = new THREE.Mesh(sphereGeometryL, sphereMaterial1);
-const sphere6 = new THREE.Mesh(sphereGeometryM, sphereMaterial1);
-const sphere7 = new THREE.Mesh(sphereGeometryM, sphereMaterial1);
+const sphere1 = new THREE.Mesh(sphereGeometryXL, sphereMaterialOr);
+const sphere2 = new THREE.Mesh(sphereGeometryM, sphereMaterialOr);
+const sphere3 = new THREE.Mesh(sphereGeometryL, sphereMaterialOr);
+const sphere4 = new THREE.Mesh(sphereGeometryM, sphereMaterialOr);
+const sphere5 = new THREE.Mesh(sphereGeometryL, sphereMaterialOr);
+const sphere6 = new THREE.Mesh(sphereGeometryM, sphereMaterialOr);
+const sphere7 = new THREE.Mesh(sphereGeometryM, sphereMaterialOr);
 //Pink
-const sphere8 = new THREE.Mesh(sphereGeometryXL, sphereMaterial2);
+const sphere8 = new THREE.Mesh(sphereGeometryXL, sphereMaterialPi);
 //Green
-const sphere9 = new THREE.Mesh(sphereGeometryXL, sphereMaterial3);
-const sphere10 = new THREE.Mesh(sphereGeometryM, sphereMaterial3);
-const sphere11 = new THREE.Mesh(sphereGeometryL, sphereMaterial3);
+const sphere9 = new THREE.Mesh(sphereGeometryXL, sphereMaterialGr);
+const sphere10 = new THREE.Mesh(sphereGeometryM, sphereMaterialGr);
+const sphere11 = new THREE.Mesh(sphereGeometryL, sphereMaterialGr);
+//Red
+const sphere12 = new THREE.Mesh(sphereGeometryS, sphereMaterialRe);
+//Yellow
+const sphere13 = new THREE.Mesh(sphereGeometryXL, sphereMaterialYe);
+const sphere14 = new THREE.Mesh(sphereGeometryL, sphereMaterialYe);
+const sphere15 = new THREE.Mesh(sphereGeometryM, sphereMaterialYe);
+//Purple
+const sphere16 = new THREE.Mesh(sphereGeometryL, sphereMaterialPu);
+//Blue
+const sphere17 = new THREE.Mesh(sphereGeometryXL, sphereMaterialBl);
+const sphere18 = new THREE.Mesh(sphereGeometryS, sphereMaterialBl);
+const sphere19 = new THREE.Mesh(sphereGeometryM, sphereMaterialBl);
 
 // Position spheres at different heights
 sphere1.position.set(20, 15, 0);
-sphere2.position.set(20, 5, 5);
-sphere3.position.set(17, 4, 10);
-sphere4.position.set(20, 1.5, 3);
-sphere5.position.set(17, -2, 2);
-sphere6.position.set(20, -2.5, 6);
+sphere2.position.set(20, 5, 10);
+sphere3.position.set(17, 4, 20);
+sphere4.position.set(20, 1.5, 6);
+sphere5.position.set(17, -2, 4);
+sphere6.position.set(20, -2.5, 12);
 sphere7.position.set(17, -4, 0);
 sphere8.position.set(-20, 10, 0);
-sphere9.position.set(-18, 0, 3);
-sphere10.position.set(-18, -6, 10);
-sphere11.position.set(-18, -7, 8);
+sphere9.position.set(-18, 0, 6);
+sphere10.position.set(-18, -6, 20);
+sphere11.position.set(-18, -7, 16);
+sphere12.position.set(-20, -14, 6);
+sphere13.position.set(-10, 9, 6);
+sphere14.position.set(-10, 1, 0);
+sphere15.position.set(-10, -12, 0);
+sphere16.position.set(-3, 1, 0);
+sphere17.position.set(-3, -3, 14);
+sphere18.position.set(-4, -7, 10);
+sphere19.position.set(-3, -7, 8);
 
 // Add spheres to the scene
 scene.add(
@@ -95,10 +119,18 @@ scene.add(
   sphere8,
   sphere9,
   sphere10,
-  sphere11
+  sphere11,
+  sphere12,
+  sphere13,
+  sphere14,
+  sphere15,
+  sphere16,
+  sphere17,
+  sphere18,
+  sphere19
 );
 
-camera.position.z = 25;
+camera.position.z = 40;
 
 //Add Lights
 const topLight = new THREE.DirectionalLight(0xffffff, 1);
