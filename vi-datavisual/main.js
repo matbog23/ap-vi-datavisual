@@ -10,25 +10,6 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
-let object;
-let objToRender = "DataVis3D";
-
-const loader = new GLTFLoader();
-
-loader.load(
-  `../vi-data3js/public/Assets/${objToRender}`,
-  function (gltf) {
-    object = gltf.scene;
-    scene.add(object);
-  },
-  function (xhr) {
-    console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-  },
-  function (error) {
-    console.error(error);
-  }
-);
-
 const renderer = new THREE.WebGLRenderer({ alpha: true }); //set to given DIV / canvas
 renderer.setSize(
   document.getElementById("container3D").clientWidth,
@@ -37,14 +18,9 @@ renderer.setSize(
 
 document.getElementById("container3D").appendChild(renderer.domElement);
 
-/*const geometry = new THREE.TorusKnotGeometry(2, 0.6, 64, 16);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const position = new THREE.Vector3(300, 200, 500);
-const torusKnot = new THREE.Mesh(geometry, material, position);
-scene.add(torusKnot);*/
-
 // Define sphere geometries
-const sphereGeometryXL = new THREE.SphereGeometry(3, 32, 32); //(scale, widthSegments, heightSegments)
+const sphereGeometryXXL = new THREE.SphereGeometry(8, 32, 32);
+const sphereGeometryXL = new THREE.SphereGeometry(3.5, 32, 32); //(scale, widthSegments, heightSegments)
 const sphereGeometryL = new THREE.SphereGeometry(2, 32, 32);
 const sphereGeometryM = new THREE.SphereGeometry(1, 32, 32);
 const sphereGeometryS = new THREE.SphereGeometry(0.5, 32, 32);
@@ -60,7 +36,7 @@ const sphereMaterialOr = new THREE.MeshStandardMaterial({ color: 0xfa772a }); //
 
 // Create sphere meshes with geometries and materials
 //orange
-const sphere1 = new THREE.Mesh(sphereGeometryXL, sphereMaterialOr);
+const sphere1 = new THREE.Mesh(sphereGeometryXXL, sphereMaterialOr);
 const sphere2 = new THREE.Mesh(sphereGeometryM, sphereMaterialOr);
 const sphere3 = new THREE.Mesh(sphereGeometryL, sphereMaterialOr);
 const sphere4 = new THREE.Mesh(sphereGeometryM, sphereMaterialOr);
@@ -130,7 +106,18 @@ scene.add(
   sphere19
 );
 
-camera.position.z = 40;
+//camera.position.z = 40;
+// Add event listener for slider input
+slider.addEventListener("input", () => {
+  // Calculate Z position based on slider value
+  const zPosition = ((slider.max - slider.value) / 100) * 100 - 30; // Invert calculation
+  // Set camera position
+  camera.position.z = zPosition;
+});
+
+// Adjust camera position initially based on initial slider value
+const initialZPosition = ((slider.max - slider.value) / 100) * 100 - 30; // Invert calculation
+camera.position.z = initialZPosition;
 
 //Add Lights
 const topLight = new THREE.DirectionalLight(0xffffff, 1);
