@@ -78,6 +78,18 @@ sphere17.position.set(-3, -2, 14);
 sphere18.position.set(-4, -6, 10);
 sphere19.position.set(-3, -6, 8);
 
+// Define cube geometry and material
+const cubeGeometryX = new THREE.BoxGeometry(60, 0.5, 0.5);
+const cubeGeometryY = new THREE.BoxGeometry(0.5, 40, 0.5);
+
+const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
+
+// Create cube mesh
+const cubeX = new THREE.Mesh(cubeGeometryX, cubeMaterial);
+const cubeY = new THREE.Mesh(cubeGeometryY, cubeMaterial);
+cubeX.position.set(0, -15, 20); // Set cube position
+cubeY.position.set(-25, 0, 20); // Set cube position
+
 // Add spheres to the scene
 scene.add(
   sphere1,
@@ -98,7 +110,9 @@ scene.add(
   sphere16,
   sphere17,
   sphere18,
-  sphere19
+  sphere19,
+  cubeX,
+  cubeY
 );
 
 // Add event listener for slider input
