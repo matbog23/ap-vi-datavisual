@@ -1,7 +1,7 @@
 body {
   overflow: hidden;
   font-family: "Grandstander", cursive;
-  background-image: url("./assets/BackgroundV2.jpg");
+  background-image: url("./assets/AchtergrondV4.png");
   margin: 0;
   padding: 0;
   background-size: cover; /* Cover the entire viewport */
@@ -19,7 +19,7 @@ body {
 }
 
 .div1 {
-  grid-area: 1 / 1 / 10 / 11;
+  grid-area: 1 / 1 / 11 / 11;
 }
 .div2 {
   grid-area: 10 / 2 / 11 / 11;
@@ -29,16 +29,6 @@ body {
 }
 .div4 {
   grid-area: 10 / 1 / 11 / 2;
-}
-
-.div3 {
-  height: 20vh;
-  background-image: url("./assets/LegendeTransparant.png");
-  margin: 0;
-  padding: 3rem;
-  background-size: cover; /* Cover the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
 }
 
 #sliderContainer {
@@ -71,4 +61,29 @@ th {
 
 tr:nth-child(even) {
   background-color: #ab8cd7;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Adjust as needed */
+  text-align: center;
+}
+
+.orbs-container {
+  margin-top: 20px;
+}
+
+.orb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
 }
